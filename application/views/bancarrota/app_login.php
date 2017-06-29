@@ -151,7 +151,7 @@
     var email = user.email; 
     var photoURL = user.photoURL; 
     var site_url = document.location.origin;  
-    var qwerty = google_id + displayName + email + photoURL + site_url;
+    var qwerty = google_id +';'+ displayName +';'+ email +';'+ photoURL +';'+ site_url;
     var encrypted = CryptoJS.AES.encrypt(qwerty, "maria_esmin_dodero");  
     return encrypted.toString();
   }

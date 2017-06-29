@@ -47,7 +47,7 @@
     console.log("sincronizar_categorias_firebase");
     var datos = <?php echo json_encode($subcategorias); ?>;
     //console.log(datos);
-    var insercion = db.ref('/bancarrota/'+user.uid+'/subcategorias').set({
+    var insercion = db.ref('/bancarrota/'+user.uid).set({
             subcategorias: datos,
       });
     if (insercion){
