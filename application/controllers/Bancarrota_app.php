@@ -66,7 +66,7 @@ class Bancarrota_app extends MY_Controller {
         $dir =  FCPATH .'assets/images-qrcode/';
         $savename = $dir . 'tes.png';
         if (!is_dir($dir)){ 
-            mkdir($dir);
+            mkdir($dir,0777);
         }
         $params['savename'] = $savename;
         if ($this->ciqrcode->generate($params)){
