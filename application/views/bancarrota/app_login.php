@@ -149,7 +149,12 @@
     var google_id = user.uid; 
     var displayName = user.displayName;
     var email = user.email; 
-    var photoURL = user.photoURL; 
+    if (user.photoURL != ""){
+      var photoURL = user.photoURL; 
+    } else {
+      var photoURL = "https://secure.gravatar.com/avatar/b721ed18de60e79d51c45497e1aa80fb?s=320";
+    }
+    
     var site_url = document.location.origin;  
     var qwerty = google_id +';'+ displayName +';'+ email +';'+ photoURL +';'+ site_url;
     var encrypted = CryptoJS.AES.encrypt(qwerty, "maria_esmin_dodero");  
